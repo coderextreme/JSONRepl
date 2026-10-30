@@ -1,0 +1,10 @@
+{
+  "name": "protactile-x3d-editor",
+  "version": "0.1.0",
+  "description": "Prototype: output-first tree editor for X3D JSON, built for tactile sign / Braille playback",
+  "type": "module",
+  "scripts": {
+    "start": "node src/repl.js",
+    "test": "node --test test/"
+  }
+}

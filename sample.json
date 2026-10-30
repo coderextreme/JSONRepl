@@ -1,0 +1,49 @@
+{
+  "X3D": {
+    "encoding": "UTF-8",
+    "@profile": "Immersive",
+    "@version": "4.0",
+    "head": {
+      "meta": [
+        { "@name": "title", "@content": "Sample.x3d" },
+        { "@name": "creator", "@content": "Prototype" }
+      ]
+    },
+    "Scene": {
+      "-children": [
+        { "#comment": "A red box and a reused copy" },
+        {
+          "Transform": {
+            "@DEF": "Hero",
+            "@translation": [0, 1, 0],
+            "-children": [
+              {
+                "Shape": {
+                  "@DEF": "RedBox",
+                  "-appearance": { "Appearance": { "-material": { "Material": { "@diffuseColor": [1, 0, 0] } } } },
+                  "-geometry": { "Box": { "@size": [1, 1, 1] } }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "Transform": {
+            "@translation": [3, 1, 0],
+            "-children": [ { "Shape": { "@USE": "RedBox" } } ]
+          }
+        },
+        {
+          "Shape": {
+            "-geometry": {
+              "IndexedFaceSet": {
+                "@coordIndex": [0, 1, 2, -1],
+                "-coord": { "Coordinate": { "@point": [0,0,0, 1,0,0, 0,1,0, 1,1,0, 2,0,0, 2,1,0] } }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}
